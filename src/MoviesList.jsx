@@ -22,19 +22,26 @@ function MoviesList({
   }, [movies, setTotalResults]);
 
   useEffect(() => {
+    const controller = new AbortController();
+    const signal = controller.signal;
     async function getMovies() {
-      //   console.log(query);
-      const res = await fetch(
-        `http://www.omdbapi.com/?apikey=7da494ae&s=${query}`
-      );
-      const data = await res.json();
-      //   console.log(data);
-      setMovies(data.Search);
-      setActiveMovieId(null);
-      //   console.log(data);
+      try {
+        const res = await fetch(
+          `http://www.omdbapi.com/?apikey=7da494ae&s=${query}`,
+          { signal }
+        );
+        const data = await res.json();
+        setMovies(data.Search);
+        setActiveMovieId(null);
+        //
+      } catch (error) {
+        console.log(error.message);
+      }
     }
 
     getMovies();
+
+    return () => controller.abort();
   }, [query, setActiveMovieId]);
 
   return (

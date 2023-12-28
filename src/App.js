@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Header from "./Header";
+import Main from "./Main";
+import MoviesList from "./MoviesList";
+import WatchedMovies from "./WatchedMovies";
+import { useState } from "react";
 function App() {
+  const [query, setQuery] = useState("");
+  const [totalResults, setTotalResults] = useState("");
+  const [activeMovieId, setActiveMovieId] = useState(null);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header query={query} totalResults={totalResults} setQuery={setQuery} />
+      <Main>
+        <MoviesList
+          setActiveMovieId={setActiveMovieId}
+          activeMovieId={activeMovieId}
+          setTotalResults={setTotalResults}
+          query={query}
+        />
+        <WatchedMovies
+          activeMovieId={activeMovieId}
+          setActiveMovieId={setActiveMovieId}
+        />
+      </Main>
     </div>
   );
 }

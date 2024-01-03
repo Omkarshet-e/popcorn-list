@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Outfit:wght@400;700&family=Permanent+Marker&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Outfit:wght@400;700&family=Permanent+Marker&display=swap");
 
 * {
   margin: 0;
@@ -8,7 +8,7 @@
 }
 
 :root {
-  --color-dark: #18122B;
+  --color-dark: #18122b;
   --color-primary: #393053;
   --color-primary-light: #635985;
   --color-light: #d5a4e0;
@@ -16,12 +16,11 @@
   --color-primary: #5D3587;
   --color-primary-light: #A367B1;
   --color-light: #d5a4e0; */
-
 }
 
 html {
   font-size: 62.5%;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .container {
@@ -55,7 +54,7 @@ header {
 }
 
 .logo {
-  font-family: 'Permanent Marker', cursive;
+  font-family: "Permanent Marker", cursive;
   color: var(--color-light);
   font-weight: 400;
 }
@@ -92,7 +91,6 @@ header {
 section {
   width: 50%;
 }
-
 
 .box {
   background-color: var(--color-dark);
@@ -154,7 +152,6 @@ section {
   flex: 1;
   font-size: 1.4rem;
   color: whitesmoke;
-
 }
 
 .details h2 {
@@ -193,8 +190,6 @@ section {
   font-size: 1.6rem;
   height: 7rem;
 }
-
-
 
 .movie-card {
   background-color: var(--color-primary);
@@ -263,7 +258,6 @@ section {
   padding: 1.2rem 0;
   margin-bottom: 1.4rem;
   /* border: 2px solid red; */
-
 }
 
 .star {
@@ -287,7 +281,6 @@ section {
   min-width: 3.5rem;
   height: 3.5rem;
   line-height: 3rem;
-
 }
 
 .button {
@@ -299,4 +292,11 @@ section {
   font-size: 1.6rem;
   padding: 0.8em 2em;
   border-radius: 2rem;
+}
+
+.error {
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+  margin: 2rem 0;
 }

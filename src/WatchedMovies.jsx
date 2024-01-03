@@ -2,10 +2,12 @@ import MoviesContainer from "./MoviesContainer";
 import WatchListDetails from "./WatchListDetails";
 import StarRating from "./StarRating";
 import { useEffect, useState } from "react";
+import Loader from "./Loader";
 // import Movie from "./Movie";
 function WatchedMovies({ activeMovieId, setActiveMovieId }) {
   const [userList, setUserList] = useState([]);
   const [userRating, setUserRating] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
 
   return (
     <section className="watched">
@@ -36,6 +38,8 @@ function WatchedMovies({ activeMovieId, setActiveMovieId }) {
             setActiveMovieId={setActiveMovieId}
             setUserList={setUserList}
             key={activeMovieId}
+            setIsLoading={setIsLoading}
+            isLoading={isLoading}
           />
         )}
       </MoviesContainer>
@@ -90,6 +94,8 @@ function ShowDetails({
   setUserList,
   setUserRating,
   userRating,
+  setIsLoading,
+  isLoading,
 }) {
   const [movieDetails, setMovieDetails] = useState(null);
   const [listIds, setListIds] = useState([]);
@@ -99,16 +105,21 @@ function ShowDetails({
   }
 
   useEffect(() => {
+    setIsLoading(true);
     async function getMovieById() {
-      const res = await fetch(
-        `http://www.omdbapi.com/?apikey=7da494ae&i=${activeMovieId}`
-      );
-      const data = await res.json();
-      setMovieDetails(data);
-      //   console.log(data);
+      try {
+        const res = await fetch(
+          `http://www.omdbapi.com/?apikey=7da494ae&i=${activeMovieId}`
+        );
+        const data = await res.json();
+        setMovieDetails(data);
+        setIsLoading(false);
+      } catch (error) {
+        console.log("error");
+      }
     }
     getMovieById();
-  }, [activeMovieId]);
+  }, [activeMovieId, setIsLoading]);
   const {
     Actors: actors,
     Director: director,
@@ -163,7 +174,9 @@ function ShowDetails({
     rating,
   ]);
 
-  return (
+  return isLoading ? (
+    <Loader />
+  ) : (
     <div className="movie-details-container">
       <div className="movie-card">
         <div className="img-container">

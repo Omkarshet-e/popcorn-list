@@ -33,7 +33,7 @@ function MoviesList({
       setIsloading(true);
       try {
         const res = await fetch(
-          `http://www.omdbapi.com/?apikey=7da494ae&s=${query}`,
+          `https://www.omdbapi.com/?apikey=7da494ae&s=${query}`,
           { signal }
         );
         const data = await res.json();

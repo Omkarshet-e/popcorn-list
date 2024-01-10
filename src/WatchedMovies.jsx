@@ -109,7 +109,7 @@ function ShowDetails({
     async function getMovieById() {
       try {
         const res = await fetch(
-          `http://www.omdbapi.com/?apikey=7da494ae&i=${activeMovieId}`
+          `https://www.omdbapi.com/?apikey=7da494ae&i=${activeMovieId}`
         );
         const data = await res.json();
         setMovieDetails(data);

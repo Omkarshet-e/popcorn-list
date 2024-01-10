@@ -118,10 +118,10 @@ section {
 }
 
 .btn-remove button {
-  color: black;
-  background-color: red;
-  padding: 0.2rem 0.5rem;
-  border-radius: 50%;
+  color: var(--color-light);
+  background-color: var(--color-dark);
+  padding: 1rem 1.2rem;
+  border-radius: 0.8rem;
   border: 1px solid black;
   font-size: 1.6rem;
   cursor: pointer;

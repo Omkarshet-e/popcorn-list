@@ -18,7 +18,7 @@ function Header({ totalResults, query, setQuery }) {
             />
           </div>
           {totalResults ? (
-            <p style={{ fontSize: "1.8rem" }}>
+            <p className="totalResults">
               Found <span style={{ fontWeight: "800" }}>{totalResults}</span>{" "}
               Results{" "}
             </p>

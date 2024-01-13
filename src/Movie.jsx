@@ -13,7 +13,10 @@ export default function Movie({
   const [hover, setHover] = useState(false);
   return (
     <div
-      onClick={() => onSelect(imdbID)}
+      onClick={() => {
+        window.scrollTo(0, 0);
+        onSelect(imdbID);
+      }}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       className={`movie-container ${

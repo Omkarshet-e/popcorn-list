@@ -67,7 +67,7 @@ function MoviesList({
       <MoviesContainer>
         {isLoading && <Loader />}
         {!isLoading && isError && <Error msg={errorMsg} />}
-        {movies?.length ? null : (
+        {!isLoading && !isError && !movies?.length && (
           <div
             style={{
               textAlign: "center",

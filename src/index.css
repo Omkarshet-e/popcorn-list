@@ -344,14 +344,12 @@ section {
   .box {
     width: 100%;
   }
-  .search-query {
-    width: 20rem;
-  }
+
   .movie-container {
     margin: 2.5px 0;
   }
   .logo {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
   html {
     font-size: 50%;
@@ -360,6 +358,9 @@ section {
 
 @media screen and (max-width: 430px) {
   .logo {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+  }
+  .search-query {
+    width: 20rem;
   }
 }

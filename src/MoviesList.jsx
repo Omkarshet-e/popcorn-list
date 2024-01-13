@@ -67,6 +67,18 @@ function MoviesList({
       <MoviesContainer>
         {isLoading && <Loader />}
         {!isLoading && isError && <Error msg={errorMsg} />}
+        {movies?.length ? null : (
+          <div
+            style={{
+              textAlign: "center",
+              color: "whitesmoke",
+              fontSize: "1.6rem",
+              margin: "1rem",
+            }}
+          >
+            Search to see results ...
+          </div>
+        )}
         {!isLoading &&
           !isError &&
           movies?.map((obj) => {

@@ -5,9 +5,14 @@ import { useEffect, useState } from "react";
 import Loader from "./Loader";
 // import Movie from "./Movie";
 function WatchedMovies({ activeMovieId, setActiveMovieId }) {
-  const [userList, setUserList] = useState([]);
+  const [userList, setUserList] = useState(
+    JSON.parse(localStorage.getItem("list")) || []
+  );
   const [userRating, setUserRating] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
+  useEffect(() => {
+    localStorage.setItem("list", JSON.stringify(userList));
+  }, [userList]);
 
   return (
     <section className="watched">

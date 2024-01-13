@@ -54,6 +54,12 @@ header {
   opacity: 0.6;
 }
 
+.left-container {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+}
+
 .logo {
   font-family: "Permanent Marker", cursive;
   color: var(--color-light);
@@ -333,6 +339,17 @@ section {
   .totalResults {
     display: none;
   }
+  .header {
+    justify-content: center;
+  }
+  .left-container {
+    justify-content: space-between;
+    width: 100%;
+    gap: 0;
+  }
+  .search-query {
+    width: 25rem;
+  }
   .main-container {
     flex-direction: column-reverse;
     align-items: center;
@@ -359,7 +376,7 @@ section {
 
 @media screen and (max-width: 430px) {
   .logo {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
   .search-query {
     width: 20rem;

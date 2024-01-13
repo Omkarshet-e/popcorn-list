@@ -117,8 +117,10 @@ function ShowDetails({
           `https://www.omdbapi.com/?apikey=7da494ae&i=${activeMovieId}`
         );
         const data = await res.json();
-        setMovieDetails(data);
-        setIsLoading(false);
+        setTimeout(() => {
+          setMovieDetails(data);
+          setIsLoading(false);
+        }, 1000);
       } catch (error) {
         console.log("error");
       }

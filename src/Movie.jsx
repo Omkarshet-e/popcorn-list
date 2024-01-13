@@ -14,7 +14,9 @@ export default function Movie({
   return (
     <div
       onClick={() => {
-        window.scrollTo(0, 0);
+        if (window.scrollY > 0.25 * window.innerHeight) {
+          window.scrollTo(0, 0);
+        }
         onSelect(imdbID);
       }}
       onMouseEnter={() => setHover(true)}

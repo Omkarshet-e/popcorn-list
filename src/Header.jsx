@@ -7,7 +7,7 @@ function Header({ totalResults, query, setQuery }) {
     <header>
       <div className="container">
         <div className="header">
-          <div style={{ display: "flex", gap: "4rem", alignItems: "center" }}>
+          <div className="left-container">
             <h1 className="logo"> POPCORN LIST 🍿</h1>
             <input
               value={query}
